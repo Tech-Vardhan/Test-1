@@ -1,0 +1,109 @@
+<h1>Data</h1>
+<div class="container">
+  <form [formGroup]="reactiveForm" (ngSubmit)="setData()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">FirstName</label>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="fName"
+        required
+        minlength="2"
+        maxlength="30"
+        pattern="[A-Za-z]+"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">MiddleName</label>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="mName"
+        minlength="2"
+        maxlength="30"
+        pattern="[A-Za-z]+"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">LastName</label>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="lName"
+        required
+        minlength="2"
+        maxlength="30"
+        pattern="[A-Za-z]+"
+      />
+    </div>
+
+    <div class="mb-3">
+      <!-- dropdown -->
+      <select class="form-select" aria-label="Default select example">
+        <option selected>company Name</option>
+        <option value="1">One</option>
+      </select>
+    </div>
+    <!-- Age -->
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Age</label>
+      <input
+        formControlName="age"
+        type="number"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Age"
+      />
+    </div>
+    <!-- text-area -->
+    <div class="form-floating">
+      <textarea
+        class="form-control"
+        placeholder="Leave a comment here"
+        id="floatingTextarea"
+      ></textarea>
+      <label for="floatingTextarea">Comments</label>
+    </div>
+
+    <br />
+    <br />
+
+    <!-- checkbox -->
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="radio"
+        formControlName="gender"
+        name="gender"
+        value="male"
+        id="flexRadioDefault1"
+      />
+      <label class="form-check-label" for="flexRadioDefault1"> male </label>
+    </div>
+
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="gender"
+        value="female"
+        formControlName="gender"
+        id="flexRadioDefault2"
+        checked
+      />
+      <label class="form-check-label" for="flexRadioDefault2"> Female </label>
+    </div>
+
+    <br />
+    <br />
+
+    <div>
+      <button routerLink="/ractive" type="submit" class="btn btn-primary">
+        Login
+      </button>
+    </div>
+  </form>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,19 @@
+
+<form #homepageForm="ngForm" (ngSubmit)="sendData(homepageForm)">
+
+  <div class="mb-3">
+
+    <label for="exampleInputEmail1" class="form-label">Enter Id</label>
+    <input
+     
+      type="number"
+      class="form-control"
+      name="input"
+      aria-describedby="emailHelp"  
+      #input="ngModel"
+      ngModel
+    />
+    
+  </div>
+  <button routerLink="/login/{{input.value}}">Lest's go</button>
+</form>
